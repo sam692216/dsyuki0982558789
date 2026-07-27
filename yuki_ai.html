@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>華佗 YUKI ｜ 雲華佗保單健診 首席 AI 輔導顧問 電子名片</title>
+
+    <!-- Google Fonts: Noto Sans TC & Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        softGold: {
+                            50: '#FDFBF7',
+                            100: '#FAF6ED',
+                            200: '#F3EAD3',
+                            500: '#D4AF37', // 優雅金色
+                            600: '#C59B27',
+                            700: '#A37E1E',
+                        },
+                        roseGold: {
+                            50: '#FFF8F8',
+                            100: '#FFEBEB',
+                            500: '#E0A899', // 柔和玫瑰金
+                            600: '#CD9283',
+                        },
+                        slateBlue: {
+                            800: '#2C3E50', // 深藍灰 (文字色)
+                            900: '#1A252F',
+                        },
+                        line: {
+                            DEFAULT: '#06C755',
+                            hover: '#05b34c',
+                            light: '#E6F9ED'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Noto Sans TC"', 'Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* 隱藏滾動條但保留滾動功能 */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FAF6ED;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #D4AF37/30;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D4AF37;
+        }
+        /* 柔和白毛玻璃底板 */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        /* 柔和發光動畫 */
+        @keyframes soft-glow {
+            0%, 100% { box-shadow: 0 0 15px rgba(212, 175, 55, 0.15); }
+            50% { box-shadow: 0 0 25px rgba(212, 175, 55, 0.3); }
+        }
+        .glow-border {
+            animation: soft-glow 4s infinite ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-b from-[#FDFBF7] via-[#FCFAF5] to-[#F5ECE1] text-slateBlue-800 font-sans antialiased selection:bg-softGold-200 selection:text-slateBlue-900 min-h-screen flex flex-col justify-between relative overflow-x-hidden">
+
+    <!-- 背景優雅玫瑰金/淡金色漸層光暈 -->
+    <div class="absolute top-[-10%] left-[-20%] w-[80%] h-[60%] rounded-full bg-roseGold-100/40 blur-[120px] -z-10"></div>
+    <div class="absolute bottom-[20%] right-[-30%] w-[90%] h-[70%] rounded-full bg-softGold-200/20 blur-[150px] -z-10"></div>
+
+    <!-- 頂部 Logo 列 (寬度在桌機版放寬，字體稍微加大) -->
+    <header class="w-full max-w-md md:max-w-5xl mx-auto px-6 pt-6 pb-2 flex items-center justify-between z-10">
+        <div class="flex items-center gap-2">
+            <div class="w-7 h-7 rounded-md bg-gradient-to-tr from-softGold-600 to-softGold-500 text-white flex items-center justify-center font-bold text-sm shadow-sm">
+                華
+            </div>
+            <span class="text-sm font-bold tracking-widest text-softGold-700">雲華佗 ｜ 數位名片與服務</span>
+        </div>
+        <a href="https://lin.ee/YGTARlx" target="_blank" class="inline-flex items-center gap-1 bg-[#E6F9ED] hover:bg-line-light text-emerald-600 border border-emerald-200 px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wider transition-all">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+            線上在線
+        </a>
+    </header>
+
+    <!-- 主名片包裝 (E-Card Wrapper) - 在桌機下改為 12 欄雙欄排版 -->
+    <main class="w-full max-w-md md:max-w-5xl mx-auto px-4 py-2 md:py-6 grid grid-cols-12 gap-6 md:gap-8 items-start flex-grow z-10">
+
+        <!-- ================= 左側固定名片與形象欄 (Left Column) ================= -->
+        <div class="col-span-12 md:col-span-5 md:sticky md:top-6 space-y-6">
+            
+            <!-- 1. YUKI 個人形象卡 (Profile Card) -->
+            <section class="glass-panel rounded-3xl p-6 text-center relative overflow-hidden shadow-xl border border-softGold-200/30">
+                <!-- 卡片頂部金粉裝飾條 -->
+                <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-softGold-500 via-roseGold-500 to-softGold-500"></div>
+
+                <!-- 頭像 - 大四方形 -->
+                <div class="relative w-44 h-44 mx-auto mb-5">
+                    <div class="absolute -inset-1 rounded-2xl bg-gradient-to-tr from-softGold-500 to-roseGold-500 opacity-40 blur-sm"></div>
+                    <img src="ChatGPT Image 2026年7月27日 下午03_45_43.png" 
+                         alt="華佗 YUKI" 
+                         class="relative w-full h-full rounded-2xl object-cover object-center border border-white shadow-md glow-border">
+                </div>
+
+                <!-- 姓名/職稱 - 字體加大 -->
+                <h1 class="text-3xl font-bold text-slateBlue-800 tracking-wide">華佗 YUKI</h1>
+                <p class="text-sm font-semibold text-softGold-700 tracking-wider uppercase mt-1.5">雲華佗保單健診 首席 AI 輔導顧問</p>
+                
+                <div class="my-4 h-[1px] bg-gradient-to-r from-transparent via-softGold-500/20 to-transparent"></div>
+
+                <!-- 金句理念 - 字體加大 -->
+                <p class="text-sm italic text-slate-600 leading-relaxed max-w-xs mx-auto">
+                    「看懂每一份保障，守住每一步安心」
+                </p>
+                <p class="text-xs text-slate-500 mt-3 leading-relaxed max-w-xs mx-auto font-medium">
+                    AI 不會取代業務員，但會用 AI 的業務員正在取代其他人。
+                </p>
+
+                <!-- 快速聯絡 CTA 按鈕列 - 字體加大 -->
+                <div class="mt-6 space-y-3">
+                    <a href="https://lin.ee/YGTARlx" target="_blank" class="w-full inline-flex items-center justify-center gap-2.5 bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500 text-white font-bold py-4 px-4 rounded-2xl shadow-md text-sm sm:text-base tracking-wide transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0">
+                        <svg class="w-5.5 h-5.5 fill-current" viewBox="0 0 24 24">
+                            <path d="M24 10.304c0-5.369-5.383-9.738-12-9.738-6.616 0-12 4.369-12 9.738 0 4.814 4.269 8.846 10.036 9.608.391.084.922.258 1.057.592.122.303.079.778.039 1.085l-.171 1.027c-.053.303-.242 1.186 1.039.647 1.281-.54 6.911-4.069 9.428-6.967 1.739-1.907 2.572-3.843 2.572-6.002z"/>
+                        </svg>
+                        加 LINE 預約早會 / 諮詢
+                    </a>
+
+                    <div class="grid grid-cols-2 gap-3">
+                        <a href="tel:0982-558-789" class="inline-flex items-center justify-center gap-1.5 bg-[#FAF6ED] hover:bg-[#F3EAD3] text-softGold-700 border border-softGold-200/50 font-bold py-3.5 px-2 rounded-2xl text-xs sm:text-sm transition-colors">
+                            <svg class="w-4 h-4 text-softGold-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                            </svg>
+                            撥號：0982-558-789
+                        </a>
+                        <a href="mailto:dsyuki789@gmail.com" class="inline-flex items-center justify-center gap-1.5 bg-[#FAF6ED] hover:bg-[#F3EAD3] text-softGold-700 border border-softGold-200/50 font-bold py-3.5 px-2 rounded-2xl text-xs sm:text-sm transition-colors">
+                            <svg class="w-4 h-4 text-softGold-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            </svg>
+                            寄信聯絡 YUKI
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 1.5. YUKI 品牌主視覺形象海報卡片 - 字體加大 -->
+            <section class="glass-panel rounded-3xl p-5 shadow-xl border border-softGold-200/30 overflow-hidden group">
+                <div class="flex items-center justify-between mb-3 px-1">
+                    <span class="text-xs text-softGold-700 font-bold uppercase tracking-wider">雲華佗代言 ｜ 品牌形象</span>
+                    <span class="text-[11px] text-slate-400 font-medium">點擊放大</span>
+                </div>
+                
+                <div class="relative rounded-2xl overflow-hidden cursor-pointer shadow-sm border border-slate-100 aspect-[9/16] h-72 md:h-80 mx-auto" onclick="openLightbox(5)">
+                    <img src="ChatGPT Image 2026年7月27日 下午03_50_25.png" 
+                         alt="雲華佗保單健診代言 YUKI" 
+                         class="w-full h-full object-cover object-center group-hover:scale-102 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-[#0B192C]/10 flex items-end justify-center p-3 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <span class="text-xs text-slateBlue-800 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full shadow font-bold">
+                            放大檢視品牌海報
+                        </span>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- 桌機版顯示專屬 QR Code (字體加大) -->
+            <div class="hidden md:block p-4 bg-white/50 rounded-2xl border border-softGold-200/20 text-center">
+                <p class="text-xs text-slate-500 mb-2 font-bold">掃描加 LINE 直接預約</p>
+                <div class="w-28 h-28 mx-auto bg-white p-2 rounded-lg border border-slate-100 shadow-sm flex items-center justify-center">
+                    <svg class="w-full h-full" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="100" height="100" fill="white"/>
+                        <path d="M10 10H40V40H10V10ZM15 15V35H35V15H15Z" fill="#2C3E50"/>
+                        <rect x="20" y="20" width="10" height="10" fill="#D4AF37"/>
+                        <path d="M60 10H90V40H60V10ZM65 15V35H85V15H65Z" fill="#2C3E50"/>
+                        <rect x="70" y="20" width="10" height="10" fill="#D4AF37"/>
+                        <path d="M10 60H40V90H10V60ZM15 65V85H35V65H15Z" fill="#2C3E50"/>
+                        <rect x="20" y="70" width="10" height="10" fill="#D4AF37"/>
+                        <rect x="50" y="50" width="10" height="10" fill="#2C3E50"/>
+                        <rect x="65" y="50" width="15" height="10" fill="#2C3E50"/>
+                        <rect x="85" y="50" width="5" height="15" fill="#2C3E50"/>
+                        <rect x="50" y="65" width="15" height="15" fill="#06C755"/>
+                        <rect x="70" y="70" width="20" height="20" fill="#2C3E50"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= 右側滾動內容欄 (Right Column) ================= -->
+        <div class="col-span-12 md:col-span-7 space-y-6">
+
+            <!-- 2. Before vs After 痛點對抗區塊 - 字體與內文加大 -->
+            <section class="space-y-3">
+                <h2 class="text-xs sm:text-sm font-bold tracking-widest text-softGold-700 uppercase px-2">新人別再熬夜做報告</h2>
+                <div class="glass-panel rounded-2xl overflow-hidden divide-y divide-softGold-100 shadow-md text-xs sm:text-sm">
+                    <!-- 以前的你 -->
+                    <div class="p-5 bg-red-50/50 flex items-start gap-4">
+                        <div class="text-red-500 font-bold bg-red-100 w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 text-sm">❌</div>
+                        <div>
+                            <h4 class="font-bold text-red-700 text-sm sm:text-base">以前的你：加班到深夜，業績沒起色</h4>
+                            <p class="text-slate-600 mt-1.5 leading-relaxed text-xs sm:text-sm">手動建檔整理保單、查複雜條款、通宵修改銷售簡報，下班人家在追劇，你卻在做繁瑣雜事。時間都被耗損，沒時間真正拜訪客戶！</p>
+                        </div>
+                    </div>
+                    <!-- 現在的你 -->
+                    <div class="p-5 bg-emerald-50/50 flex items-start gap-4">
+                        <div class="text-emerald-600 font-bold bg-emerald-100 w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 text-sm">✨</div>
+                        <div>
+                            <h4 class="font-bold text-[#2A7B54] text-sm sm:text-base">現在的你：AI 助手隨身，創造高成交</h4>
+                            <p class="text-slate-700 mt-1.5 leading-relaxed text-xs sm:text-sm">保單 30 秒自動判讀、簡報建議一鍵產出。繁瑣工作交給 AI，每天省下 2 小時以上，精準命中最速成交！</p>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-center text-xs text-softGold-700 font-bold italic">「業績不是靠加班，而是靠把時間放對地方。」</p>
+            </section>
+
+            <!-- 3. 雙產品核心服務 - 字體與清單加大 -->
+            <section class="space-y-3">
+                <h2 class="text-xs sm:text-sm font-bold tracking-widest text-softGold-700 uppercase px-2">我的服務與推廣產品</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:space-y-0">
+                    <!-- 產品 1: 雲華佗 2+ -->
+                    <div class="glass-panel rounded-2xl p-6 shadow-md relative border-l-4 border-softGold-500 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-3">
+                                <h3 class="text-base sm:text-lg font-bold text-slateBlue-800 flex items-center gap-1.5">
+                                    <span class="text-softGold-600">☁️</span> 雲華佗 2+ 系統
+                                </h3>
+                                <span class="bg-softGold-100 text-softGold-700 text-xs px-2.5 py-0.5 rounded-full border border-softGold-200 font-medium">主力推薦</span>
+                            </div>
+                            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">一鍵解析複雜條款、精準鎖定 A 級客群。</p>
+                            
+                            <ul class="space-y-3 text-xs sm:text-sm text-slate-500">
+                                <li class="flex items-start gap-1.5">
+                                    <span class="text-softGold-500 font-bold">▪</span>
+                                    <span><strong>超速保單判讀</strong>：上傳 PDF 條款或 DM，30秒自動抓出保障核心與商品特色。</span>
+                                </li>
+                                <li class="flex items-start gap-1.5">
+                                    <span class="text-softGold-500 font-bold">▪</span>
+                                    <span><strong>銷售簡報一鍵生成</strong>：自動產出高質感圖表簡報，省下 80% PPT 時間。</span>
+                                </li>
+                                <li class="flex items-start gap-1.5">
+                                    <span class="text-softGold-500 font-bold">▪</span>
+                                    <span><strong>友善連結</strong>：一個入口直達關貿、公會、勞保局，免去切換查詢麻煩。</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- 產品 2: 華佗秘書 -->
+                    <div class="glass-panel rounded-2xl p-6 shadow-md relative border-l-4 border-emerald-500 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-3">
+                                <h3 class="text-base sm:text-lg font-bold text-slateBlue-800 flex items-center gap-1.5">
+                                    <span class="text-emerald-500">💼</span> 華佗秘書 (ICS)
+                                </h3>
+                                <span class="bg-emerald-50 text-emerald-700 text-xs px-2.5 py-0.5 rounded-full border border-emerald-100 font-medium">效率神器</span>
+                            </div>
+                            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">讓您的手機就是最強大的保單管理資料庫。</p>
+                            
+                            <ul class="space-y-3 text-xs sm:text-sm text-slate-500">
+                                <li class="flex items-start gap-1.5">
+                                    <span class="text-emerald-500 font-bold">▪</span>
+                                    <span><strong>保險存摺一鍵匯入</strong>：告別繁瑣手動建檔，實現「零輸入」快速掌握保單全貌。</span>
+                                </li>
+                                <li class="flex items-start gap-1.5">
+                                    <span class="text-emerald-500 font-bold">▪</span>
+                                    <span><strong>產出詳細健診報表</strong>：自動整理出精準又完整的健診分析，客戶一看就懂。</span>
+                                </li>
+                                <li class="flex items-start gap-1.5">
+                                    <span class="text-emerald-500 font-bold">▪</span>
+                                    <span><strong>三大強大效益</strong>：省時 (省80%時間) ｜ 專業 (分析精準) ｜ 安心 (安全值得信賴)。</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. DM 海報與文宣專區 (Lightbox) - 字體加大 -->
+            <section class="space-y-3">
+                <div class="flex items-center justify-between px-2">
+                    <h2 class="text-xs sm:text-sm font-bold tracking-widest text-softGold-700 uppercase">早會與產品宣傳 DM 牆</h2>
+                    <span class="text-xs text-slate-400 font-medium">點擊可放大儲存</span>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-4">
+                    <!-- DM 1 -->
+                    <div class="relative group rounded-xl overflow-hidden border border-softGold-200/40 bg-white cursor-pointer aspect-[3/4] shadow-sm hover:shadow-md transition-shadow" onclick="openLightbox(0)">
+                        <img src="早會邀約DM/商智華佗早會海報.png" alt="商智華佗早會海報" class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-300">
+                        <div class="absolute inset-0 bg-[#0B192C]/10 flex items-end p-2.5 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <span class="text-xs text-slateBlue-800 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-lg shadow font-semibold">放大檢視</span>
+                        </div>
+                    </div>
+                    <!-- DM 2 -->
+                    <div class="relative group rounded-xl overflow-hidden border border-softGold-200/40 bg-white cursor-pointer aspect-[3/4] shadow-sm hover:shadow-md transition-shadow" onclick="openLightbox(1)">
+                        <img src="早會邀約DM/d21996f7-adbd-49bc-9d5a-ec76d700a339.png" alt="新人熬夜做報告海報" class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-300">
+                        <div class="absolute inset-0 bg-[#0B192C]/10 flex items-end p-2.5 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <span class="text-xs text-slateBlue-800 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-lg shadow font-semibold">放大檢視</span>
+                        </div>
+                    </div>
+                    <!-- DM 3 -->
+                    <div class="relative group rounded-xl overflow-hidden border border-softGold-200/40 bg-white cursor-pointer aspect-[3/4] shadow-sm hover:shadow-md transition-shadow" onclick="openLightbox(2)">
+                        <img src="華佗袐書功能DM/grok-image-5b0f0d83-8f5e-4da1-b878-ddb672caa735.png" alt="華佗秘書 DM" class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-300">
+                        <div class="absolute inset-0 bg-[#0B192C]/10 flex items-end p-2.5 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <span class="text-xs text-slateBlue-800 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-lg shadow font-semibold">放大檢視</span>
+                        </div>
+                    </div>
+                    <!-- DM 4 -->
+                    <div class="relative group rounded-xl overflow-hidden border border-softGold-200/40 bg-white cursor-pointer aspect-[3/4] shadow-sm hover:shadow-md transition-shadow" onclick="openLightbox(3)">
+                        <img src="華佗袐書功能DM/742241759_1562343958592216_6205689973807263514_n.jpg" alt="不用再找網站 DM" class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-300">
+                        <div class="absolute inset-0 bg-[#0B192C]/10 flex items-end p-2.5 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <span class="text-xs text-slateBlue-800 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-lg shadow font-semibold">放大檢視</span>
+                        </div>
+                    </div>
+                    <!-- DM 5 -->
+                    <div class="col-span-2 relative group rounded-xl overflow-hidden border border-softGold-200/40 bg-white cursor-pointer aspect-[16/9] shadow-sm hover:shadow-md transition-shadow" onclick="openLightbox(4)">
+                        <img src="華佗袐書功能DM/743831052_1596531678558907_1603156979989521303_n.jpg" alt="友善連結 DM" class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-300">
+                        <div class="absolute inset-0 bg-[#0B192C]/10 flex items-end p-2.5 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <span class="text-xs text-slateBlue-800 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-lg shadow font-semibold">放大檢視</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. 邀請早會方案 - 字體加大 -->
+            <section class="glass-panel rounded-3xl p-6 text-center shadow-md relative border border-softGold-200/50">
+                <span class="text-xs bg-[#FAF6ED] text-softGold-700 font-bold border border-softGold-200 px-4 py-1 rounded-full">早會體驗專案預約中</span>
+                <h3 class="text-lg font-bold text-slateBlue-800 mt-3.5">通訊處／團隊主管早會示範</h3>
+                <p class="text-sm text-slate-600 mt-2 leading-relaxed px-2 font-medium">
+                    「想要一場辦公室數位資產整理會嗎？<br>我們帶著科技來，您帶著安心走。」
+                </p>
+                <p class="text-xs sm:text-sm text-slate-500 mt-2.5 font-medium">
+                    立刻加 LINE，YUKI 為您的團隊安排專屬早會示範！
+                </p>
+                <div class="mt-4">
+                    <a href="https://lin.ee/YGTARlx" target="_blank" class="w-full inline-flex items-center justify-center gap-2.5 bg-gradient-to-r from-softGold-600 to-softGold-500 hover:from-softGold-500 hover:to-softGold-400 text-white font-bold py-3.5 px-4 rounded-xl text-sm sm:text-base shadow transition-all duration-200">
+                        <svg class="w-4.5 h-4.5 fill-current" viewBox="0 0 24 24">
+                            <path d="M24 10.304c0-5.369-5.383-9.738-12-9.738-6.616 0-12 4.369-12 9.738 0 4.814 4.269 8.846 10.036 9.608.391.084.922.258 1.057.592.122.303.079.778.039 1.085l-.171 1.027c-.053.303-.242 1.186 1.039.647 1.281-.54 6.911-4.069 9.428-6.967 1.739-1.907 2.572-3.843 2.572-6.002z"/>
+                        </svg>
+                        立即預約專屬早會
+                    </a>
+                </div>
+            </section>
+
+        </div>
+
+    </main>
+
+    <!-- 名片底座 Footer (字體適度微調) -->
+    <footer class="w-full max-w-md md:max-w-5xl mx-auto px-6 py-8 text-center text-slate-400 space-y-4">
+        <div class="h-[1px] bg-slate-200"></div>
+        <p class="text-xs leading-relaxed font-medium">
+            商智資訊股份有限公司 SoftBi Corp. Ltd.<br>
+            雲華佗 2+ 保單健診系統 ｜ 華佗秘書行動小幫手
+        </p>
+        <p class="text-xs font-medium">
+            © 2026 華佗 YUKI. All rights reserved.
+        </p>
+    </footer>
+
+    <!-- LIGHTBOX 燈箱元件 - 控制項與下載按鈕加大 -->
+    <div id="lightbox" class="fixed inset-0 bg-black/95 z-50 hidden flex flex-col justify-between p-4 backdrop-blur-md transition-opacity duration-300">
+        <!-- 頂部控制列 -->
+        <div class="w-full flex items-center justify-between text-white py-2">
+            <span id="lightboxIndex" class="text-sm font-semibold text-slate-400">1 / 6</span>
+            <button onclick="closeLightbox()" class="w-11 h-11 rounded-full bg-slate-800/80 hover:bg-slate-700 text-white flex items-center justify-center focus:outline-none transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+            </button>
+        </div>
+
+        <!-- 圖片顯示區 -->
+        <div class="flex-grow flex items-center justify-center relative my-4">
+            <!-- 左右切換按鈕 -->
+            <button onclick="prevImage()" class="absolute left-2 w-11 h-11 rounded-full bg-slate-800/80 text-white flex items-center justify-center hover:bg-slate-700 transition-colors z-10">
+                <svg class="w-5.5 h-5.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                </svg>
+            </button>
+            <button onclick="nextImage()" class="absolute right-2 w-11 h-11 rounded-full bg-slate-800/80 text-white flex items-center justify-center hover:bg-slate-700 transition-colors z-10">
+                <svg class="w-5.5 h-5.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+            </button>
+
+            <!-- 主圖片 -->
+            <img id="lightboxImg" src="" alt="大圖預覽" class="max-w-full max-h-[70vh] object-contain rounded-lg shadow-2xl transition-all duration-300">
+        </div>
+
+        <!-- 底部快速行動區 - 按鈕加大 -->
+        <div class="w-full flex flex-col gap-2.5 pb-4">
+            <a id="lightboxDownload" href="" target="_blank" class="w-full bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white text-center py-3 rounded-xl text-xs sm:text-sm font-semibold transition-colors block">
+                在新分頁開啟 / 下載此海報
+            </a>
+            <a href="https://lin.ee/YGTARlx" target="_blank" class="w-full bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500 text-white text-center py-3.5 rounded-xl text-sm font-bold transition-all block">
+                加 LINE 洽詢早會體驗
+            </a>
+        </div>
+    </div>
+
+    <!-- JavaScript 燈箱邏輯 -->
+    <script>
+        const dmImages = [
+            "早會邀約DM/商智華佗早會海報.png",
+            "早會邀約DM/d21996f7-adbd-49bc-9d5a-ec76d700a339.png",
+            "華佗袐書功能DM/grok-image-5b0f0d83-8f5e-4da1-b878-ddb672caa735.png",
+            "華佗袐書功能DM/742241759_1562343958592216_6205689973807263514_n.jpg",
+            "華佗袐書功能DM/743831052_1596531678558907_1603156979989521303_n.jpg",
+            "ChatGPT Image 2026年7月27日 下午03_50_25.png"
+        ];
+        
+        let currentIdx = 0;
+
+        function openLightbox(index) {
+            currentIdx = index;
+            updateLightbox();
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // 防止背景滾動
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.add('hidden');
+            document.body.style.overflow = ''; // 恢復滾動
+        }
+
+        function updateLightbox() {
+            const imgPath = dmImages[currentIdx];
+            document.getElementById('lightboxImg').src = imgPath;
+            document.getElementById('lightboxIndex').innerText = `${currentIdx + 1} / ${dmImages.length}`;
+            document.getElementById('lightboxDownload').href = imgPath;
+        }
+
+        function prevImage() {
+            currentIdx = (currentIdx - 1 + dmImages.length) % dmImages.length;
+            updateLightbox();
+        }
+
+        // 監控左右切換
+        function nextImage() {
+            currentIdx = (currentIdx + 1) % dmImages.length;
+            updateLightbox();
+        }
+
+        // 監聽鍵盤事件以支援左右切換與 ESC 關閉
+        document.addEventListener('keydown', function(event) {
+            const lightbox = document.getElementById('lightbox');
+            if (lightbox.classList.contains('hidden')) return;
+
+            if (event.key === 'Escape') {
+                closeLightbox();
+            } else if (event.key === 'ArrowLeft') {
+                prevImage();
+            } else if (event.key === 'ArrowRight') {
+                nextImage();
+            }
+        });
+
+        // 點擊背景遮罩關閉燈箱
+        document.getElementById('lightbox').onclick = function(event) {
+            const lightbox = document.getElementById('lightbox');
+            const clickedElement = event.target;
+            
+            // 只有點擊背景黑色區域才關閉
+            if (clickedElement === lightbox) {
+                closeLightbox();
+            }
+        };
+    </script>
+</body>
+</html>
